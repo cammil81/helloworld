@@ -16,3 +16,8 @@ st.subheader("Range time slider")
 appointment = st.slider("Schedule your appointment:", value=(time(11,30),time(12,45)))
 st.write("You're scheduled for: ", appointment)
 
+st.subheader("Datetime slider")
+start_time=st.slider("When do you start?", value=datetime(2023, 1, 1, 9, 30),format("MMM/DDD/YYYY - hh:mm"))
+
+st.write("Start time:", start_time)
+                     
