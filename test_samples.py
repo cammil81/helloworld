@@ -1,16 +1,11 @@
 import streamlit as st
+import pandas as pd
+import pandas_profiling
+from streamlit_pandas_profiling import st_profile_report
 
-st.header("st.checkbox")
+st.header('`streamlit_pandas_profiling`')
 
-st.write("Select your favourite color:")
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
 
-blue = st.checkbox("blue")
-red = st.checkbox("red")
-green = st.checkbox("green")
-
-if blue:
-  st.write("Your favourite color is blue 🔵")
-if red:
-  st.write("Your favourite color is red 🔴")
-if green:
-  st.write("Your favourite color is green 🟢")
+pr = df.profile_report()
+st_profile_report(pr)
